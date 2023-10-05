@@ -15,8 +15,8 @@ public class Tests
     {
         _table.TryAdd(key, expected);
 
-        int actual = _table.Get(key);
-        Assert.AreEqual(expected, actual);
+        ValueBox actual = _table.Get(key);
+        Assert.AreEqual(expected, actual.Value);
     }
 
     [TestCase("nuts", 3)]
@@ -25,9 +25,9 @@ public class Tests
     {
         _table.TryAdd(key, expected);
 
-        int actual = _table.Get(key);
+        ValueBox actual = _table.Get(key);
 
-        Assert.AreEqual(expected, actual);
+        Assert.AreEqual(expected, actual.Value);
     }
 
     [TestCase("nuts")]
